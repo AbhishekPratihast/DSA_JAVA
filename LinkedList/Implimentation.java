@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 public class Implimentation {
     public static class Node{
         int data;
@@ -14,11 +7,13 @@ public class Implimentation {
         }
     }
     public static class LinkList{
+        int size=0;
         Node head=null;
         Node tail=null;
         public void insertAtFirst(int data){
             Node n1=new Node(data);
             // empty
+            size++;
             if(head==null){
                 head=tail=n1;
                 return;
@@ -38,6 +33,7 @@ public class Implimentation {
         // tail given
         public void insertAtEnd(int data){
             Node n2=new Node(data);
+            size++;
             if(head==null){
                 head=tail=n2;
                 return;
@@ -48,12 +44,13 @@ public class Implimentation {
         // without tail
         public void insertAtEndWithoutTail(int data){
             Node n2=new Node(data);
+            size++;
             if(head==null){
                 head=tail=n2;
                 return;
             }
             Node temp=head;
-            while(temp.next!=null){
+            while(temp.next!=null){ 
                 temp=temp.next;
             }
             temp.next=n2;
